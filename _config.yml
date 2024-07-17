@@ -26,8 +26,8 @@ author:
   pronouns         : # example: "she/her"  
   bio              : "Short biography for the left-hand sidebar"
   location         : "Tehran"
-  employer         : "Tehran University"
-  uri              : "https://ut.ac.ir/en"
+  employer         : "University of Tehran"
+  uri              : # URL
   email            : "ali-aliakbari@ut.ac.ir" 
 
   # Academic websites
