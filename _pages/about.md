@@ -9,7 +9,7 @@ redirect_from:
 
 I completed my undergraduate degree in Mechanical Engineering at Noshirvani Babol University in 2023 and am currently pursuing a master’s degree in Fluid Dynamics at the University of Tehran. My research focuses on applying deep learning methods to Computational Fluid Dynamics (CFD), including techniques such as super-resolution and deep learning-based turbulence modeling. Through my research, I am actively learning and expanding my expertise.
 
-I’m excited to advance CFD research with deep learning techniques! My work involves combining innovative methods to reduce simulation costs and enhance accuracy. Explore my site to discover my research, projects, and achievements. I’m always eager to connect, so feel free to reach out for any questions or collaboration opportunities!☺️
+I’m excited to advance CFD research with deep learning techniques! My work involves combining innovative methods to reduce simulation costs and enhance accuracy. Explore my site to discover my research, projects, and achievements. I’m always eager to connect, so feel free to reach out for any questions or collaboration opportunities!😊
 
 
 ------
