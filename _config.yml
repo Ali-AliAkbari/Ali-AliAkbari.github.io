@@ -10,7 +10,7 @@
 locale                   : "en-US"
 title                    : "Ali's Homepage"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : &name "Ali AliAkbari"
 description              : &description "personal description"
 url                      : https://ali-aliakbari.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -24,7 +24,7 @@ author:
   avatar           : "profile.png"
   name             : "Ali AliAkbari"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "Master's Student in Fluid Dynamics at the University of Tehran"
   location         : "Tehran"
   employer         : "University of Tehran"
   uri              : # URL
