@@ -10,7 +10,7 @@ redirect_from:
 I completed my undergraduate degree in Mechanical Engineering at Noshirvani Babol University in 2023 and am currently pursuing a master’s degree in Fluid Dynamics at the University of Tehran. My research focuses on applying deep learning methods to Computational Fluid Dynamics (CFD), including techniques such as super-resolution and deep learning-based turbulence modeling. Through my research, I am actively learning and expanding my expertise.
 
 I’m excited to advance CFD research with deep learning techniques! My work involves combining innovative methods to reduce simulation costs and enhance accuracy. Explore my site to discover my research, projects, and achievements. I’m always eager to connect, so feel free to reach out for any questions or collaboration opportunities!☺️
-
+------
 web
 ======
 Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
