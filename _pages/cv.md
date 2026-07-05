@@ -109,7 +109,7 @@ Publications
 ======
 
 * Abdollahi, M. S., **AliAkbari, A.**, Ma, Y., & Mohebbi, R. (2025). *Numerical Investigation of Heat Transfer and Flow Resistance in Tubes with Flat Plate, Blunt Edge, and Airfoil Turbulators.* European Physical Journal Plus.
-Khosravi Firozjaei, H., **AliAkbari**, A., Nejat, A., & Riasi, A. A Surrogate-Based Optimization for Centrifugal Fan Volute Design: Numerical and Experimental Study. Under review.
+* Khosravi Firozjaei, H., **AliAkbari**, A., Nejat, A., & Riasi, A. A Surrogate-Based Optimization for Centrifugal Fan Volute Design: Numerical and Experimental Study. (2026) Under review.
 <ul>
 {% for post in site.publications reversed %}
 {% include archive-single-cv.html %}
