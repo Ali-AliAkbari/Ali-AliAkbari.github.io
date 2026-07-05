@@ -109,7 +109,7 @@ Publications
 ======
 
 * Abdollahi, M. S., **AliAkbari, A.**, Ma, Y., & Mohebbi, R. (2025). *Numerical Investigation of Heat Transfer and Flow Resistance in Tubes with Flat Plate, Blunt Edge, and Airfoil Turbulators.* European Physical Journal Plus.
-
+Khosravi Firozjaei, H., **AliAkbari**, A., Nejat, A., & Riasi, A. A Surrogate-Based Optimization for Centrifugal Fan Volute Design: Numerical and Experimental Study. Under review.
 <ul>
 {% for post in site.publications reversed %}
 {% include archive-single-cv.html %}
@@ -130,11 +130,6 @@ Academic Service
 
 * Peer Reviewer, *Physics of Fluids* (AIP Publishing), 2025–Present
 
-Awards
-======
-
-* Ranked in the **Top 1%** among approximately 10,000 participants in the Iranian National M.Sc. Entrance Examination (Mechanical Engineering).
-* Ranked **3rd** among 108 undergraduate Mechanical Engineering students at Babol Noshirvani University of Technology.
 
 Languages
 ======
@@ -142,20 +137,3 @@ Languages
 * Persian (Native)
 * English (Professional proficiency)
 
-Teaching
-======
-
-<ul>
-{% for post in site.teaching reversed %}
-{% include archive-single-cv.html %}
-{% endfor %}
-</ul>
-
-Talks
-======
-
-<ul>
-{% for post in site.talks reversed %}
-{% include archive-single-talk-cv.html %}
-{% endfor %}
-</ul>
