@@ -2,20 +2,6 @@
 
 Modern static site built with [Astro](https://astro.build), styled for CFD / ML research. Content lives in `src/data/site.ts`.
 
-## Local development
-
-```bash
-npm install
-npm run dev
-```
-
-Open http://localhost:4321
-
-```bash
-npm run build
-npm run preview
-```
-
 ## Deploy to https://ali-aliakbari.github.io/
 
 This repo is set up for **GitHub Pages via GitHub Actions** (`site` + `base` are already configured for a user site).
