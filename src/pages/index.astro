@@ -1,0 +1,281 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import {
+  site,
+  intro,
+  interests,
+  publications,
+  projects,
+  honors,
+  education,
+} from '@/data/site';
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">{site.role}</p>
+        <h1 class="display">{intro.headline}</h1>
+        <p class="lede muted">{site.affiliation} · {site.location}</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href={site.cvPdf}>Download CV</a>
+          <a class="btn" href="/publications/">Publications</a>
+          <a class="btn" href={`mailto:${site.email}`}>Get in touch</a>
+        </div>
+        <div class="hero-links">
+          <a href={site.scholar}>Google Scholar</a>
+          <span class="dot" aria-hidden="true"></span>
+          <a href={site.github}>GitHub</a>
+          <span class="dot" aria-hidden="true"></span>
+          <a href={site.orcid}>ORCID</a>
+        </div>
+      </div>
+      <aside class="hero-aside">
+        <div class="portrait">
+          <img src="/profile.png" width="280" height="280" alt="" loading="eager" />
+        </div>
+        <ul class="stat-list">
+          {
+            education.map((e) => (
+              <li>
+                <strong>{e.degree.split(',')[0]}</strong>
+                <span class="muted">{e.school}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell prose">
+      {intro.paragraphs.map((p) => <p>{p}</p>)}
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="shell">
+      <div class="section-header">
+        <p class="eyebrow">Focus</p>
+        <h2 class="display">Research interests</h2>
+      </div>
+      <ul class="pill-row">
+        {interests.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-header split">
+        <div>
+          <p class="eyebrow">Recent work</p>
+          <h2 class="display">Publications</h2>
+        </div>
+        <a class="btn" href="/publications/">View all</a>
+      </div>
+      <div class="card-grid">
+        {
+          publications.map((pub) => (
+            <article class="card pub-card">
+              <p class="eyebrow">{pub.year}</p>
+              <h3>{pub.title}</h3>
+              <p class="muted authors">{pub.authors}</p>
+              <p class="venue">
+                <em>{pub.venue}</em>
+              </p>
+              <a href={pub.doi}>DOI →</a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-header split">
+        <div>
+          <p class="eyebrow">Code & experiments</p>
+          <h2 class="display">Projects</h2>
+        </div>
+        <a class="btn" href="/projects/">View all</a>
+      </div>
+      <div class="card-grid cols-2">
+        {
+          projects.slice(0, 4).map((p) => (
+            <article class="card">
+              <p class="eyebrow">{p.period}</p>
+              <h3>{p.title}</h3>
+              <p class="muted">{p.summary}</p>
+              <div class="tags">
+                {p.tags.map((t) => (
+                  <span class="tag">{t}</span>
+                ))}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-end">
+    <div class="shell card honors">
+      <p class="eyebrow">Recognition</p>
+      <ul class="clean">
+        {honors.map((h) => <li>{h}</li>)}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 3.5rem 0 2rem;
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0.5rem 0 0.75rem;
+    max-width: 22ch;
+  }
+
+  .lede {
+    margin: 0 0 1.5rem;
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.92rem;
+  }
+
+  .hero-links a {
+    text-decoration: none;
+  }
+
+  .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+
+  .portrait {
+    border-radius: calc(var(--radius) + 4px);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    box-shadow: 0 24px 80px -40px var(--accent-glow);
+  }
+
+  .portrait img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .stat-list {
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .stat-list li {
+    display: grid;
+    gap: 0.15rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stat-list strong {
+    font-size: 0.95rem;
+  }
+
+  .section-tight {
+    padding-top: 2rem;
+  }
+
+  .section-end {
+    padding-bottom: 5rem;
+  }
+
+  .split {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pill-row li {
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  .pub-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    margin: 0.25rem 0 0.5rem;
+    line-height: 1.35;
+  }
+
+  .authors {
+    font-size: 0.9rem;
+    margin: 0 0 0.35rem;
+  }
+
+  .venue {
+    margin: 0 0 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .tags {
+    margin-top: 0.75rem;
+  }
+
+  .honors ul {
+    margin-top: 0.5rem;
+  }
+</style>

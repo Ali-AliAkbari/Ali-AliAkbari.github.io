@@ -1,0 +1,247 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import {
+  site,
+  education,
+  experience,
+  skills,
+  service,
+  honors,
+  publications,
+  manuscript,
+} from '@/data/site';
+
+const languages = [
+  'English — professional working proficiency (TOEFL iBT expected 2026)',
+  'Persian — native',
+];
+
+const courses = [
+  'Neural Networks and Deep Learning — 16.77/20',
+  'Advanced CFD I — 17/20',
+  'Advanced Fluid Mechanics — 18.25/20',
+  'Continuum Mechanics — 17.4/20',
+  'Introduction to CFD — 20/20',
+];
+
+const references = [
+  { name: 'Dr. Amir Nejat', role: 'Professor', email: 'anejat@ut.ac.ir' },
+  { name: 'Dr. Alireza Riasi', role: 'Professor', email: 'ariasi@ut.ac.ir' },
+  { name: 'Dr. Kamal Jannati', role: 'Lecturer', email: 'kamal.jannati@ut.ac.ir' },
+];
+---
+
+<BaseLayout title="CV">
+  <section class="section page-head">
+    <div class="shell">
+      <p class="eyebrow">Curriculum vitae</p>
+      <h1 class="display">{site.name}</h1>
+      <p class="muted sub">{site.email} · {site.phone}</p>
+      <a class="btn btn-primary" href={site.cvPdf}>PDF version</a>
+    </div>
+  </section>
+
+  <section class="section cv-block">
+    <div class="shell">
+      <h2 class="display block-title">Education</h2>
+      <div class="timeline">
+        {
+          education.map((e) => (
+            <article class="card timeline-item">
+              <header>
+                <h3>{e.degree}</h3>
+                <span class="muted">{e.dates}</span>
+              </header>
+              <p>
+                {e.school}, {e.place} · GPA {e.gpa}
+              </p>
+              <p class="muted">{e.note}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section cv-block">
+    <div class="shell">
+      <h2 class="display block-title">Experience</h2>
+      <div class="timeline">
+        {
+          experience.map((job) => (
+            <article class="card timeline-item">
+              <header>
+                <h3>{job.title}</h3>
+                <span class="muted">{job.dates}</span>
+              </header>
+              <p class="muted org">{job.org}</p>
+              <ul class="clean">
+                {job.bullets.map((b) => (
+                  <li>{b}</li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section cv-block">
+    <div class="shell">
+      <h2 class="display block-title">Publications</h2>
+      <ol class="pub-list">
+        {
+          publications.map((p) => (
+            <li>
+              {p.authors}, "{p.title}," <em>{p.venue}</em>, {p.year}.{' '}
+              <a href={p.doi}>DOI</a>
+            </li>
+          ))
+        }
+        <li class="muted">
+          {manuscript.authors}, "{manuscript.title}," {manuscript.status}.
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section cv-block">
+    <div class="shell card-grid cols-2">
+      <div>
+        <h2 class="display block-title">Skills</h2>
+        {
+          skills.map((group) => (
+            <div class="skill-group">
+              <h3>{group.label}</h3>
+              <p class="muted">{group.items.join(' · ')}</p>
+            </div>
+          ))
+        }
+      </div>
+      <div>
+        <h2 class="display block-title">Courses</h2>
+        <ul class="clean">
+          {courses.map((c) => (
+            <li>{c}</li>
+          ))}
+        </ul>
+        <h2 class="display block-title">Languages</h2>
+        <ul class="clean">
+          {languages.map((l) => (
+            <li>{l}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cv-block section-end">
+    <div class="shell card-grid cols-2">
+      <div>
+        <h2 class="display block-title">Service & honors</h2>
+        <ul class="clean">
+          {service.map((s) => (
+            <li>{s}</li>
+          ))}
+          {honors.map((h) => (
+            <li>{h}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2 class="display block-title">References</h2>
+        <ul class="refs">
+          {
+            references.map((r) => (
+              <li>
+                <strong>{r.name}</strong>
+                <span class="muted">{r.role}</span>
+                <a href={`mailto:${r.email}`}>{r.email}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-head .sub {
+    margin: 0.35rem 0 1.25rem;
+  }
+
+  .page-head h1 {
+    margin: 0.35rem 0 0;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+  }
+
+  .cv-block {
+    padding-top: 0;
+  }
+
+  .block-title {
+    font-size: 1.5rem;
+    margin: 0 0 1.25rem;
+  }
+
+  .timeline {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .timeline-item header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.35rem 1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .timeline-item h3 {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .org {
+    margin: 0 0 0.5rem;
+    font-size: 0.92rem;
+  }
+
+  .pub-list {
+    margin: 0;
+    padding-left: 1.15rem;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .skill-group {
+    margin-bottom: 1rem;
+  }
+
+  .skill-group h3 {
+    margin: 0 0 0.25rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+
+  .refs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .refs li {
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .section-end {
+    padding-bottom: 5rem;
+  }
+</style>

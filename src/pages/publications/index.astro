@@ -1,0 +1,75 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { publications, manuscript, site } from '@/data/site';
+---
+
+<BaseLayout title="Publications" description="Peer-reviewed articles and manuscripts by Ali AliAkbari.">
+  <section class="section page-head">
+    <div class="shell">
+      <p class="eyebrow">Research output</p>
+      <h1 class="display">Publications</h1>
+      <p class="muted">
+        Full list on <a href={site.scholar}>Google Scholar</a> · ORCID{' '}
+        <a href={site.orcid}>0009-0001-6400-0750</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-end">
+    <div class="shell">
+      <h2 class="display section-label">Published</h2>
+      <div class="card-grid">
+        {
+          publications.map((pub) => (
+            <article class="card pub">
+              <p class="eyebrow">{pub.year}</p>
+              <h2>{pub.title}</h2>
+              <p class="muted">{pub.authors}</p>
+              <p>
+                <em>{pub.venue}</em>
+              </p>
+              <a class="btn" href={pub.doi}>Open paper</a>
+            </article>
+          ))
+        }
+      </div>
+
+      <h2 class="display section-label prep">In preparation</h2>
+      <article class="card prep-card">
+        <p class="eyebrow">2026</p>
+        <h2>{manuscript.title}</h2>
+        <p class="muted">{manuscript.authors}</p>
+        <p>{manuscript.status}</p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-head h1 {
+    margin: 0.35rem 0 0.5rem;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+  }
+
+  .section-label {
+    font-size: 1.35rem;
+    margin: 0 0 1.25rem;
+  }
+
+  .section-label.prep {
+    margin-top: 3rem;
+  }
+
+  .pub h2,
+  .prep-card h2 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    margin: 0.25rem 0 0.6rem;
+    line-height: 1.35;
+  }
+
+  .section-end {
+    padding-bottom: 5rem;
+    padding-top: 0;
+  }
+</style>
