@@ -4,9 +4,11 @@ import { defineConfig } from 'astro/config';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 
-// User site: https://ali-aliakbari.github.io (no base path)
+// Project site: https://ali-aliakbari.github.io/ali-akbari-site/
+// When deploying from Ali-AliAkbari.github.io, remove `base` below.
 export default defineConfig({
   site: 'https://ali-aliakbari.github.io',
+  base: '/ali-akbari-site',
   output: 'static',
   trailingSlash: 'always',
   vite: {
